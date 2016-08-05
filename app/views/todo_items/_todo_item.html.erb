@@ -1,0 +1,9 @@
+<div class="todo_item <%= todo_item.done? ? 'done' : 'todo' %>">
+	<div>
+		<span class="todo_item_title"> <%=link_to "#{todo_item.task_title}", todo_list_todo_item_path(todo_list_id: @todo_list, id: todo_item) , class: "todo_item_title"%>
+		<%=" | (#{time_ago_in_words(todo_item.created_at)}) ago" %>
+		</span>
+		<%= link_to 'Edit', edit_todo_list_todo_item_path(todo_list_id:@todo_list, id:todo_item)%>
+		<%= link_to 'Delete', [@todo_list,todo_item], data: {confirm: "Item will be deleted?"}, method: :delete %>
+	</div>
+</div>

@@ -1,0 +1,6 @@
+<div class="todo_list <%= (!(todo_list.todo_items.pluck(:done).include? false) or todo_list.todo_items.count == 0) ? 'done' : 'todo' %>">
+  	<%= content_tag(:span,"#{todo_list.list_due_date}",class: "todo_list_link ")%>
+    <%= link_to "#{todo_list.list_name}", todo_list, class: "todo_list_link" %>
+    <%= link_to 'Edit', edit_todo_list_path(todo_list) %>
+    <%= link_to 'Remove', todo_list, method: :delete, data: {confirm: 'Are you sure?'} %>
+ </div>

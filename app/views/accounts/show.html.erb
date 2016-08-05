@@ -1,0 +1,18 @@
+<p>
+  <strong>First name:</strong>
+  <%= @account.first_name %>
+</p>
+<p>
+  <strong>Last name:</strong>
+  <%= @account.last_name %>
+</p>
+<p>
+  <strong>Gender:</strong>
+  <%= @account.gender %>
+</p>
+<p>
+  <strong>Age:</strong>
+  <%= @account.age %>
+</p>
+
+<%= link_to "Edit Account", edit_account_path(current_user.account.id) %>

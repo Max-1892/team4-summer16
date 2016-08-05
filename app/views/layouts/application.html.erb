@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Final Project | Assignment 8 | Todo App</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<% if logged_in? %>
+	<div style="float: right;">
+		<%= link_to "Home", root_path %> | You are logged in as: <%= link_to "#{current_user.account.first_name}", account_path(current_user.account.id) %> | <%= link_to "Logout", logout_path, data: {method: :delete} %>
+	</div>
+<% end %>
+
+<% flash.each do |key, value|%>
+  <%= content_tag :p, value, id: key %>
+<% end %>
+<%= yield %>
+
+</body>
+</html>

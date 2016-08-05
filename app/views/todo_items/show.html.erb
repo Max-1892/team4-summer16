@@ -1,0 +1,20 @@
+<p>
+  <strong>Task title:</strong>
+  <%= @todo_item.task_title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @todo_item.description %>
+</p>
+
+<p>
+  <strong>Created on:</strong>
+  <%= @todo_item.created_at %>
+</p>
+
+<p>
+  <%= @todo_item.done ? "done" : "not done" %>
+</p>
+
+<%= link_to 'Back', todo_list_path(@todo_list) %>

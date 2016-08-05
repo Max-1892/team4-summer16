@@ -1,0 +1,14 @@
+<div>
+<%= content_tag(:span, "#{@todo_list.list_name}", class: "todo_list_link")%>
+<%= link_to 'Edit', edit_todo_list_path(@todo_list) %>
+</div>
+
+<div id="todo_items">
+	<%= render @todo_items %>
+</div>
+
+<%= will_paginate @todo_items %>
+
+<%= link_to 'New Todo Item', new_todo_list_todo_item_path(@todo_list)%>
+<br/>
+<%= link_to 'Back', todo_lists_path %>
